@@ -52,13 +52,13 @@ format_gwas_data <- function(file, f_fmt,
 
 # format_gwas_data()结束--------------------
 
-# ---格式化暴露数据
+# ---格式化暴露数据。将exposure_file的文件格式给f_fmt赋值，例如：f_fmt = "vcf"。
 format_gwas_data(file = exposure_file, f_fmt = "...",
                  gws_refer_id = EXPOSURE_REFER_ID, exposure_or_outcome_name = EXPOSURE_NAME, exposure_or_outcome_data_id = EXPOSURE_DATA_ID,
                  # chromo = "...", position = "...", eff_allele = "...", non_eff_allele = "...", beta_val = "...", p_val = "..."
 )
 
-# ---格式化结局数据
+# ---格式化结局数据。将outcome_file的文件格式给f_fmt赋值，例如：f_fmt = "vcf"。
 format_gwas_data(file = outcome_file, f_fmt = "...",
                  gws_refer_id = OUTCOME_REFER_ID, exposure_or_outcome_name = OUTCOME_NAME, exposure_or_outcome_data_id = OUTCOME_DATA_ID,
                  # chromo = "...", position = "...", eff_allele = "...", non_eff_allele = "...", beta_val = "...", p_val = "...",
