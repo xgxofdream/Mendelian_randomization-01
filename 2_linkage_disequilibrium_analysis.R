@@ -10,7 +10,7 @@ exposure_data <- read.csv(exposure_csv_file, header = TRUE, sep = ",", check.nam
 unclump_snps <- ieugwasr::ld_clump(dat = dplyr::tibble(rsid = exposure_data$SNP, pval = exposure_data$pval.exposure, id = exposure_data$id.exposure),
                                    clump_kb = CLUMP_KB,
                                    clump_r2 = CLUMP_R2,
-                                   plink_bin = get_plink_exe(),
+                                   plink_bin = get_plink_exe(), # 要提前安装PLINK。https://www.cog-genomics.org/plink/。教程：https://cloud.tencent.com/developer/article/2191451
                                    bfile = file.path(LD_REF, EXPOSURE_POP))
 exposure_data <- exposure_data %>%
   dplyr::inner_join(unclump_snps, by = c("SNP" = "rsid")) %>%
