@@ -2,6 +2,7 @@ setwd(MR_DIR); cat("当前工作目录：", getwd())
 exposure_csv_file <- file.path(MR_CON_DIR, "exposure.confounder.csv")
 outcome_file <- file.path(FMT_DIR, paste0(OUTCOME_NAME, "_", OUTCOME_DATA_ID, "_formatted.csv.gz"))
 
+library(`TwoSampleMR`)
 
 # ---读取整理好的暴露数据
 exposure_data <- read.csv(exposure_csv_file, header = TRUE, sep = ",", check.names = FALSE)
